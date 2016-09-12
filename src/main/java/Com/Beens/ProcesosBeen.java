@@ -8,7 +8,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-@ManagedBean(name = "inscripcionbeen")
+@ManagedBean(name = "ProcesosBeen")
 @ViewScoped
 public class ProcesosBeen implements Serializable{
     private ProcesosDao  pDao;
