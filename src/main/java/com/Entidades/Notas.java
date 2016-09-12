@@ -11,68 +11,64 @@ import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
-@Table(name = "NOTAS")
+@Table(name = "Notas")
 public class Notas implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "idNota")        
-    private int idNota;
+    @Column (name = "idNotas")        
+    private Integer idNotas;
     
-    @Column (name = "pruebaEstado")
-    private int pruebaEstado;
+    @Column (name = "Nota1")
+    private Integer Nota1;
     
-    @Column (name = "ExamenUniversidad")
-    private int ExamenUniversidad;
+    @Column (name = " Nota2")
+    private Integer Nota2;
     
-    @Column (name = "Notapromedio")
-    private int Notapromedio;
+    @Column (name = "promedio")
+    private int promedio;
 
     @OneToOne(cascade=CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private Estudiante estudiante;
-    
-    public Notas() {
+    private AlumnoPreU estudiante;
+
+    public Integer getIdNotas() {
+        return idNotas;
     }
 
-    public int getIdNota() {
-        return idNota;
+    public void setIdNotas(Integer idNotas) {
+        this.idNotas = idNotas;
     }
 
-    public void setIdNota(int idNota) {
-        this.idNota = idNota;
+    public Integer getNota1() {
+        return Nota1;
     }
 
-    public int getPruebaEstado() {
-        return pruebaEstado;
+    public void setNota1(Integer Nota1) {
+        this.Nota1 = Nota1;
     }
 
-    public void setPruebaEstado(int pruebaEstado) {
-        this.pruebaEstado = pruebaEstado;
+    public Integer getNota2() {
+        return Nota2;
     }
 
-    public int getExamenUniversidad() {
-        return ExamenUniversidad;
+    public void setNota2(Integer Nota2) {
+        this.Nota2 = Nota2;
     }
 
-    public void setExamenUniversidad(int ExamenUniversidad) {
-        this.ExamenUniversidad = ExamenUniversidad;
+    public int getPromedio() {
+        return promedio;
     }
 
-    public int getNotapromedio() {
-        return Notapromedio;
+    public void setPromedio(int promedio) {
+        this.promedio = promedio;
     }
 
-    public void setNotapromedio(int Notapromedio) {
-        this.Notapromedio = Notapromedio;
-    }
-
-    public Estudiante getEstudiante() {
+    public AlumnoPreU getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
+    public void setEstudiante(AlumnoPreU estudiante) {
         this.estudiante = estudiante;
     }
-    
     
 }

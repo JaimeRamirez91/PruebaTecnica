@@ -13,60 +13,16 @@
             <ui:define name="content">
             <!--Tablas--> 
             <h:form>
-                <p:dataTable value="#{inscripcionbeen.listaEstudiante}" var="Estudiante">
-                    <p:column  headerText="Estudiante">
-                        <h:outputText value="#{Estudiante.nombreEstudiante}"/>
+                <h1>Estudiantes Aprobados</h1>
+                <p:dataTable  value="#{inscripcionbeen.listaalumnoadd}" var="Estudiante"  >
+                    <p:column  headerText="Estudiante" >
+                        <h:outputText value="#{Estudiante.alumnopreu.nombre}"/>
+                    </p:column>
+                    <p:column  headerText="Carrera" filterBy="#{Estudiante.carreras.nombre}">
+                        <h:outputText value="#{Estudiante.carreras.nombre}"/>
                     </p:column>
                 </p:dataTable>                         
-            </h:form>
-                <h:form id="frmBotones">
-                    <p:panelGrid id="gridBotones">
-                        <p:commandButton value="Agregar Estudiante" actionListener="#{inscripcionbeen.nuevo()}" onclick="PF('DialogoEstudiante').show();" update=":frmAgregarEstudianteDatos:gridEstudiante"/>
-                        <p:commandButton value="Agregar Carrera"/>
-                    </p:panelGrid>
-                </h:form>
-
-                <!-- Form agregar Estudiante - notas de estudiante -->
-                <h:form id="frmAgregarEstudianteDatos" >
-                    <p:dialog id="dlgEstudiante" widgetVar="DialogoEstudiante" header="Formulario Nuevo Estudiante"  resizable ="false"  position="center" 
-                              responsive="true" modal="true"  showEffect="explode" hideEffect="explode" draggable="false" closeOnEscape="true">
-
-                        <p:panelGrid  id="gridEstudiante" columns="2">
-                            <h:outputText value="Nombre:" />
-                            <p:inputText value="#{inscripcionbeen.estudiante.nombreEstudiante}"/>
-                            <h:outputText value="Prueba de Estado:" />
-                            <p:inputNumber value="#{inscripcionbeen.notas.pruebaEstado}" decimalPlaces="0"  minValue="0" maxValue="10"/>
-                            <h:outputText value="Prueba de Examen de la Universidad:" />
-                            <p:inputNumber value="#{inscripcionbeen.notas.examenUniversidad}" decimalPlaces="0"  minValue="0" maxValue="10"/>
-                            <p:outputLabel value="Carreras" />
-                            <p:outputLabel value="Nivel de interes" />
-                            <p:outputLabel value="Sistemas:" />
-                            <p:selectOneRadio id="Sistemas" value="" columns="2" required="true">
-                                  <f:selectItem itemLabel="Alto" itemValue="Xbox One"  />
-                                  <f:selectItem itemLabel="Medio" itemValue="Xbox One" />
-                                  <f:selectItem itemLabel="Bajo" itemValue="Xbox One" />
-                                  <f:selectItem itemLabel="Nulo" itemValue="Xbox One" />
-                            </p:selectOneRadio>
-                            <p:outputLabel value="Medicina:" />
-                             <p:selectOneRadio id="Medicina" value="" columns="2" required="true">
-                                  <f:selectItem itemLabel="Alto" itemValue="Xbox One" />
-                                  <f:selectItem itemLabel="Medio" itemValue="Xbox One" />
-                                  <f:selectItem itemLabel="Bajo" itemValue="Xbox One" />
-                                   <f:selectItem itemLabel="Nulo" itemValue="Xbox One" />
-                            </p:selectOneRadio>
-                            <p:outputLabel value="Administración:" />
-                             <p:selectOneRadio id="Administracion" value="" columns="2" required="true">
-                                  <f:selectItem itemLabel="Alto" itemValue="Xbox One" />
-                                  <f:selectItem itemLabel="Medio" itemValue="Xbox One" />
-                                  <f:selectItem itemLabel="Bajo" itemValue="Xbox One" />
-                                   <f:selectItem itemLabel="Nulo" itemValue="Xbox One" />
-                            </p:selectOneRadio>
-                            <p:commandButton value="Agregar"/>
-                            <p:commandButton value="Cancelar" onclick="PF('DialogoEstudiante').hide();"/>
-                        </p:panelGrid>
-                    </p:dialog>
-                </h:form>
-
+          </h:form>
             </ui:define>
 
         </ui:composition>

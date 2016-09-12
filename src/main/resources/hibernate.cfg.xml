@@ -9,8 +9,10 @@
     <property name="hibernate.connection.password">rv10i04001</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.current_session_context_class">thread</property>
-    <mapping class="com.Entidades.Estudiante"/>
-    <mapping class="com.Entidades.Notas"/>
-    <mapping class="com.Entidades.Carreras"/>
+    <mapping class="com.Entidades.AlumnoPreU"/>
+     <mapping class="com.Entidades.Carreras"/>
+      <mapping class="com.Entidades.Notas"/>
+       <mapping class="com.Entidades.CarrerasOpc"/>
+        <mapping class="com.Entidades.AlumnoAddCarrera"/>
   </session-factory>
 </hibernate-configuration>
