@@ -27,4 +27,13 @@ public class ProcesosDao {
         return lista;
 
     }
+    public void AgrerarCarrera(Carreras carrera){};
+    public void ModificarCarrera(Carreras carrera){};
+    public void EliminarCarrera(Carreras carrera){};
+    
+    public void AgrerarEstudiante(AlumnoPreU al, Notas notas, CarrerasOpc opc){};
+    public void ModificaEstudiante(AlumnoPreU al, Notas notas, CarrerasOpc opc){};
+    public void EliminarEstudiante(AlumnoPreU al, Notas notas, CarrerasOpc opc){};
+    
+    public void ProcesarAlumnos(AlumnoPreU alumno){} 
 }
